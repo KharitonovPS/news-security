@@ -12,11 +12,4 @@ public class NewsSecurityApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(NewsSecurityApplication.class, args);
 	}
-
-	/*@Bean
-	public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception{
-		return httpSecurity
-				.authorizeHttpRequests()
-				.anyRequest().authenticated().and().build();
-	}*/
 }

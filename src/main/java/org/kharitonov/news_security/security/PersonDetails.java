@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.ToString;
 import org.kharitonov.news_security.models.User;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
@@ -26,7 +27,12 @@ public class PersonDetails implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return user.getRoles()
+                .stream()
+                .map(roles -> new SimpleGrantedAuthority(
+                        roles.toString()
+                ))
+                .toList();
     }
 
     @Override

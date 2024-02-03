@@ -18,7 +18,10 @@ public class RegistrationService {
     private final PasswordEncoder passwordEncoder;
 
 
-    public RegistrationService(UserRepository repository, UserMapper mapper, PasswordEncoder passwordEncoder) {
+    public RegistrationService(UserRepository repository,
+                    UserMapper mapper,
+                    PasswordEncoder passwordEncoder
+    ) {
         this.repository = repository;
         this.mapper = mapper;
         this.passwordEncoder = passwordEncoder;
@@ -28,7 +31,7 @@ public class RegistrationService {
     public void addPerson(UserDto dto) {
         User user = mapper.dtoToUser(dto);
         user.setPassword(passwordEncoder
-                    .encode(user.getPassword()
+                .encode(user.getPassword()
                 ));
 
         repository.save(user);

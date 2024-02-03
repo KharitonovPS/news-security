@@ -8,7 +8,6 @@ import org.kharitonov.news_security.repositories.UserRepository;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;
-import java.util.TreeSet;
 
 /**
  * @author Kharitonov Pavel on 03.02.2024.
@@ -19,7 +18,7 @@ import java.util.TreeSet;
 public class UsernameValidator implements ConstraintValidator<Username, Object> {
     private final UserRepository repository;
 
-    public UsernameValidator(UserRepository repository, TreeSet<String> inMemoryCodes) {
+    public UsernameValidator(UserRepository repository) {
         this.repository = repository;
     }
 
@@ -30,8 +29,8 @@ public class UsernameValidator implements ConstraintValidator<Username, Object> 
 
     @Override
     public boolean isValid(Object input,
-            ConstraintValidatorContext constraintValidatorContext
-    ){
+                           ConstraintValidatorContext constraintValidatorContext
+    ) {
         if (input == null) {
             return false;
         }

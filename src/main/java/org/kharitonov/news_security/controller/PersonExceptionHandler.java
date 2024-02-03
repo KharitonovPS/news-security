@@ -17,7 +17,7 @@ import java.util.Map;
  */
 @ControllerAdvice
 @Slf4j
-public class NewsExceptionHandler {
+public class PersonExceptionHandler {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)

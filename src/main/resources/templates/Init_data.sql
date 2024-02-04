@@ -1,8 +1,3 @@
-
 -- Insert data into t_user table
-INSERT INTO t_user (username, password) VALUES
-    ( 'test', '{bcrypt}123');
-
--- Insert data into user_role table
-INSERT INTO user_role (user_id, roles) VALUES
-    ((SELECT id FROM t_user WHERE username = 'test'), 'ROLE_ADMIN' );
+INSERT INTO t_user (username, password, role) VALUES
+    ( 'admin', '$2a$10$OHetsMNsIZt/4W8s/wnYKuv03Nsz5zNPjsoWFjGaJwOH.JTmfWBd.', 'ROLE_ADMIN');

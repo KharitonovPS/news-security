@@ -11,7 +11,9 @@ import java.lang.annotation.*;
 @Documented
 public @interface Username {
     String message() default "Username is already taken or empty";
+
     Class<?>[] groups() default {};
+
     Class<? extends Payload>[] payload() default {};
 
 }

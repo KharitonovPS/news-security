@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import java.util.Collection;
+import java.util.Collections;
 
 /**
  * @author Kharitonov Pavel on 30.01.2024.
@@ -27,12 +28,9 @@ public class PersonDetails implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return user.getRoles()
-                .stream()
-                .map(roles -> new SimpleGrantedAuthority(
-                        roles.toString()
-                ))
-                .toList();
+        return Collections.singletonList(
+                new SimpleGrantedAuthority(user.getRole().toString())
+        );
     }
 
     @Override

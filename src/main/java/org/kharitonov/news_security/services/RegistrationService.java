@@ -19,8 +19,8 @@ public class RegistrationService {
 
 
     public RegistrationService(UserRepository repository,
-                    UserMapper mapper,
-                    PasswordEncoder passwordEncoder
+                               UserMapper mapper,
+                               PasswordEncoder passwordEncoder
     ) {
         this.repository = repository;
         this.mapper = mapper;

@@ -2,7 +2,6 @@ package org.kharitonov.news_security.validation;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
-import lombok.extern.slf4j.Slf4j;
 import org.kharitonov.news_security.models.User;
 import org.kharitonov.news_security.repositories.UserRepository;
 import org.springframework.stereotype.Component;
@@ -14,7 +13,6 @@ import java.util.Optional;
  */
 
 @Component
-@Slf4j
 public class UsernameValidator implements ConstraintValidator<Username, Object> {
     private final UserRepository repository;
 
@@ -28,8 +26,9 @@ public class UsernameValidator implements ConstraintValidator<Username, Object> 
     }
 
     @Override
-    public boolean isValid(Object input,
-                           ConstraintValidatorContext constraintValidatorContext
+    public boolean isValid(
+            Object input,
+            ConstraintValidatorContext constraintValidatorContext
     ) {
         if (input == null) {
             return false;

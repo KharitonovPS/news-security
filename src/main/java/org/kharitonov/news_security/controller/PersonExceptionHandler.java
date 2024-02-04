@@ -14,6 +14,7 @@ import java.util.Map;
 
 /**
  * @author Kharitonov Pavel on 03.02.2024.
+ * Send errors from custom validation on 'username' field
  */
 @ControllerAdvice
 @Slf4j

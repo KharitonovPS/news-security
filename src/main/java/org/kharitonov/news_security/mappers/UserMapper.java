@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * @author Kharitonov Pavel on 03.02.2024.
+ * convert dto to User Entity
  */
 @Component
 public class UserMapper {

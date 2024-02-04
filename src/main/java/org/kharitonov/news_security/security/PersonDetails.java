@@ -13,6 +13,7 @@ import java.util.Collections;
 
 /**
  * @author Kharitonov Pavel on 30.01.2024.
+ * impliments UserDetails to add User Entity to security context
  */
 @Getter
 @Component

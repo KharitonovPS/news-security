@@ -16,6 +16,10 @@ import java.util.Map;
 
 /**
  * @author Kharitonov Pavel on 30.01.2024.
+ * registration of new User at /registration endpoint
+ * check is principal was created at /greetings endpoint
+ * check admin role at /admin endpoint
+ * change role of user with @PreAuthorize (in adminService) at /make-admin endpoint
  */
 @Slf4j
 @RestController()

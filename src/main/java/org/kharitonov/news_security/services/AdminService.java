@@ -12,6 +12,7 @@ import java.util.Optional;
 
 /**
  * @author Kharitonov Pavel on 04.02.2024.
+ * makeAdmin( username ) change role of requested user to Admin
  */
 @Service
 public class AdminService {

@@ -14,6 +14,9 @@ import org.springframework.security.web.SecurityFilterChain;
 
 /**
  * @author Kharitonov Pavel on 30.01.2024.
+ * setup BCrypt encoder
+ * setup available endpoints in filterChain
+ * in this project we do not use custom AuthManager or AuthProvider
  */
 @EnableMethodSecurity
 @Configuration

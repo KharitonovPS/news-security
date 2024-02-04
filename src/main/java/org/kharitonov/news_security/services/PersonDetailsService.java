@@ -13,6 +13,7 @@ import java.util.Optional;
 
 /**
  * @author Kharitonov Pavel on 30.01.2024.
+ * implements UserDetailsService to use security context
  */
 @Service
 @Slf4j

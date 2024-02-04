@@ -1,3 +1,4 @@
+-- create schema
 create table if not exists t_user (
     id serial not null,
     username varchar(255),

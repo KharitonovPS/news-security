@@ -10,6 +10,7 @@ import java.util.Optional;
 
 /**
  * @author Kharitonov Pavel on 03.02.2024.
+ * return MethodArgumentNotValidEx if username empty, null, numberic or not unique
  */
 
 @Component

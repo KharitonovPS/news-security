@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * @author Kharitonov Pavel on 03.02.2024.
+ * addPerson(dto) use mapper to convert data and after that encode password
  */
 @Service
 public class RegistrationService {

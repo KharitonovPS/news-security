@@ -211,7 +211,7 @@ public class SecurityApplicationTests extends AbstractIntegrationServiceTest {
         }
 
         @Test
-        @DisplayName("numberic username")
+        @DisplayName("numeric username")
         void throwsExceptionIfUsernameIsNumber() throws Exception {
 
             String requestBody = "{ \"username\": 123, \"password\": \"any\", \"role\": \"any\" }";
@@ -227,5 +227,20 @@ public class SecurityApplicationTests extends AbstractIntegrationServiceTest {
                     () -> assertThat(repository.findAll().size()).isEqualTo(2)
             );
         }
+    }
+    @Test
+    @DisplayName("Test password encryption algorithm configuration")
+    void testPasswordEncryption() throws Exception {
+        String requestBody = "{ \"username\": \"testUser\", \"password\": \"testPassword\", \"role\": \"any\" }";
+
+        mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/registration")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(requestBody))
+                .andExpect(MockMvcResultMatchers.status().isOk());
+
+        User savedUser = repository.findByUsername("testUser").orElse(null);
+
+        assertThat(savedUser).isNotNull();
+        assertThat(savedUser.getPassword()).isNotEqualTo("testPassword");
     }
 }

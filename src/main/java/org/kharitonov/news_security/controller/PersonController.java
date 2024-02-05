@@ -76,7 +76,7 @@ public class PersonController {
     public ResponseEntity<HttpStatus> makeAdmin(
             @PathVariable String username,
             @AuthenticationPrincipal UserDetails details) {
-        log.info("Admin {}, try to set ROLE_ADMIN to user {}.",
+        log.info("Admin {}, try to change ROLE_ADMIN to user {}.",
                 details.getUsername(), username);
         return adminService.makeAdmin(username);
     }

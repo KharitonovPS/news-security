@@ -1,9 +1,9 @@
-package org.kharitonov.news_security.services;
+package org.kharitonov.person_security.services;
 
-import org.kharitonov.news_security.mappers.UserMapper;
-import org.kharitonov.news_security.models.User;
-import org.kharitonov.news_security.models.UserDto;
-import org.kharitonov.news_security.repositories.UserRepository;
+import org.kharitonov.person_security.mappers.UserMapper;
+import org.kharitonov.person_security.models.User;
+import org.kharitonov.person_security.models.UserDto;
+import org.kharitonov.person_security.repositories.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 

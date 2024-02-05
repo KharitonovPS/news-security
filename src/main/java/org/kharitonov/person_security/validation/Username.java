@@ -1,4 +1,4 @@
-package org.kharitonov.news_security.validation;
+package org.kharitonov.person_security.validation;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;

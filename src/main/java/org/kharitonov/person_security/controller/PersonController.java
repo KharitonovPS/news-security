@@ -1,10 +1,10 @@
-package org.kharitonov.news_security.controller;
+package org.kharitonov.person_security.controller;
 
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
-import org.kharitonov.news_security.models.UserDto;
-import org.kharitonov.news_security.services.AdminService;
-import org.kharitonov.news_security.services.RegistrationService;
+import org.kharitonov.person_security.models.UserDto;
+import org.kharitonov.person_security.services.AdminService;
+import org.kharitonov.person_security.services.RegistrationService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

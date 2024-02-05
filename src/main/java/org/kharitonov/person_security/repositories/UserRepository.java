@@ -1,6 +1,6 @@
-package org.kharitonov.news_security.repositories;
+package org.kharitonov.person_security.repositories;
 
-import org.kharitonov.news_security.models.User;
+import org.kharitonov.person_security.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

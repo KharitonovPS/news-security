@@ -1,4 +1,4 @@
-package org.kharitonov.news_security;
+package org.kharitonov.person_security;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

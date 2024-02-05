@@ -1,4 +1,4 @@
-package org.kharitonov.news_security.config;
+package org.kharitonov.person_security.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

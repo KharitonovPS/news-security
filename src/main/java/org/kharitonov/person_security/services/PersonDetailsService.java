@@ -1,9 +1,9 @@
-package org.kharitonov.news_security.services;
+package org.kharitonov.person_security.services;
 
 import lombok.extern.slf4j.Slf4j;
-import org.kharitonov.news_security.models.User;
-import org.kharitonov.news_security.repositories.UserRepository;
-import org.kharitonov.news_security.security.PersonDetails;
+import org.kharitonov.person_security.models.User;
+import org.kharitonov.person_security.repositories.UserRepository;
+import org.kharitonov.person_security.security.PersonDetails;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

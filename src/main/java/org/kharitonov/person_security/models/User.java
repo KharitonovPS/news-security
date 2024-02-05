@@ -1,4 +1,4 @@
-package org.kharitonov.news_security.models;
+package org.kharitonov.person_security.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

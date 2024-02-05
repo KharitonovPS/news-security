@@ -1,10 +1,10 @@
-package org.kharitonov.news_security;
+package org.kharitonov.person_security;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.*;
-import org.kharitonov.news_security.models.ROLES;
-import org.kharitonov.news_security.models.User;
-import org.kharitonov.news_security.repositories.UserRepository;
+import org.kharitonov.person_security.models.ROLES;
+import org.kharitonov.person_security.models.User;
+import org.kharitonov.person_security.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.http.MediaType;
@@ -157,16 +157,13 @@ public class SecurityApplicationTests extends AbstractIntegrationServiceTest {
         @Test
         @DisplayName("not unique username")
         void throwsExceptionIfUsernameAlreadyTaken() throws Exception {
-
             String requestBody = "{ \"username\": \"admin\", \"password\": \"any\", \"role\": \"any\" }";
-
             ResultActions resultActions = mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/registration")
                             .contentType(MediaType.APPLICATION_JSON)
                             .content(requestBody))
                     .andExpect(MockMvcResultMatchers.status().is4xxClientError());
             var result = resultActions.andDo(print()).andReturn();
             var response = result.getResponse();
-
             assertAll(
                     () -> assertThat(response.getContentAsString().contains("Username is already taken or empty")).isTrue(),
                     () -> assertThat(repository.findAll().size()).isEqualTo(2)
@@ -176,9 +173,7 @@ public class SecurityApplicationTests extends AbstractIntegrationServiceTest {
         @Test
         @DisplayName("empty username")
         void throwsExceptionIfUsernameIsEmpty() throws Exception {
-
             String requestBody = "{ \"username\": \"\", \"password\": \"any\", \"role\": \"any\" }";
-
             ResultActions resultActions = mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/registration")
                             .contentType(MediaType.APPLICATION_JSON)
                             .content(requestBody))
@@ -213,9 +208,7 @@ public class SecurityApplicationTests extends AbstractIntegrationServiceTest {
         @Test
         @DisplayName("numeric username")
         void throwsExceptionIfUsernameIsNumber() throws Exception {
-
             String requestBody = "{ \"username\": 123, \"password\": \"any\", \"role\": \"any\" }";
-
             ResultActions resultActions = mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/registration")
                             .contentType(MediaType.APPLICATION_JSON)
                             .content(requestBody))
@@ -227,20 +220,21 @@ public class SecurityApplicationTests extends AbstractIntegrationServiceTest {
                     () -> assertThat(repository.findAll().size()).isEqualTo(2)
             );
         }
-    }
-    @Test
-    @DisplayName("Test password encryption algorithm configuration")
-    void testPasswordEncryption() throws Exception {
-        String requestBody = "{ \"username\": \"testUser\", \"password\": \"testPassword\", \"role\": \"any\" }";
+        @Test
+        @Tag("encryption")
+        @DisplayName("Test password encryption algorithm configuration")
+        void testPasswordEncryption() throws Exception {
+            String requestBody = "{ \"username\": \"testUser\", \"password\": \"testPassword\", \"role\": \"any\" }";
+            mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/registration")
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .content(requestBody))
+                    .andExpect(MockMvcResultMatchers.status().isOk());
+            User savedUser = repository.findByUsername("testUser").orElse(null);
+            assertAll(
+                    () -> assertThat(savedUser).isNotNull(),
+                    () -> assertThat(savedUser.getPassword()).isNotEqualTo("testPassword")
+            );
+        }
 
-        mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/registration")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(requestBody))
-                .andExpect(MockMvcResultMatchers.status().isOk());
-
-        User savedUser = repository.findByUsername("testUser").orElse(null);
-
-        assertThat(savedUser).isNotNull();
-        assertThat(savedUser.getPassword()).isNotEqualTo("testPassword");
     }
 }

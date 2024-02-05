@@ -1,8 +1,8 @@
-package org.kharitonov.news_security.security;
+package org.kharitonov.person_security.security;
 
 import lombok.Getter;
 import lombok.ToString;
-import org.kharitonov.news_security.models.User;
+import org.kharitonov.person_security.models.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

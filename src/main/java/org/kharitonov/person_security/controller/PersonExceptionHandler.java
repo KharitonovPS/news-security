@@ -1,4 +1,4 @@
-package org.kharitonov.news_security.controller;
+package org.kharitonov.person_security.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

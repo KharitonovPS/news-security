@@ -1,8 +1,8 @@
-package org.kharitonov.news_security.services;
+package org.kharitonov.person_security.services;
 
-import org.kharitonov.news_security.models.ROLES;
-import org.kharitonov.news_security.models.User;
-import org.kharitonov.news_security.repositories.UserRepository;
+import org.kharitonov.person_security.models.ROLES;
+import org.kharitonov.person_security.models.User;
+import org.kharitonov.person_security.repositories.UserRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

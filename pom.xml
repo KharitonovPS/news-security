@@ -9,7 +9,7 @@
 		<relativePath/>
 	</parent>
 	<groupId>org.kharitonov</groupId>
-	<artifactId>news-security</artifactId>
+	<artifactId>person-security</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<name>news-security</name>
 	<description>Spring Boot app with Spring Security</description>

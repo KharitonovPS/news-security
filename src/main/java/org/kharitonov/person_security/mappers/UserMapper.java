@@ -1,8 +1,8 @@
-package org.kharitonov.news_security.mappers;
+package org.kharitonov.person_security.mappers;
 
-import org.kharitonov.news_security.models.ROLES;
-import org.kharitonov.news_security.models.User;
-import org.kharitonov.news_security.models.UserDto;
+import org.kharitonov.person_security.models.ROLES;
+import org.kharitonov.person_security.models.User;
+import org.kharitonov.person_security.models.UserDto;
 import org.springframework.stereotype.Component;
 
 /**

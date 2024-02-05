@@ -38,9 +38,8 @@ public class PersonController {
         this.adminService = adminService;
     }
 
-
     @GetMapping("/greetings")
-    public ResponseEntity<Map<String, String>> getGreetingsV1(
+    public ResponseEntity<Map<String, String>> getGreetings(
             @AuthenticationPrincipal UserDetails userDetails
     ) {
         log.info("Request fas taken from principal -> {}", userDetails.getUsername());
@@ -52,6 +51,7 @@ public class PersonController {
                         )));
     }
 
+    //registration of new user with custom validation
     @PostMapping("/registration")
     public ResponseEntity<HttpStatus> addUser(
             @RequestBody @Valid UserDto dto

@@ -31,16 +31,14 @@ public class UsernameValidator implements ConstraintValidator<Username, Object> 
             Object input,
             ConstraintValidatorContext constraintValidatorContext
     ) {
-        if (input == null) {
+        if (input == null || input.equals("")) {
             return false;
         }
-        if (input.equals(""))
-            return false;
-
-        if (input instanceof Number) {
+        // Numeric string is not allowed
+        if (input instanceof String && ((String) input).matches("\\d+")) {
             return false;
         }
-        if (input instanceof String) {
+        if (input instanceof String && !input.equals("null")) {
             Optional<User> user = repository.findByUsername((String) input);
             return user.isEmpty();
         }

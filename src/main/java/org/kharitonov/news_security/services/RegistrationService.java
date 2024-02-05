@@ -18,16 +18,15 @@ public class RegistrationService {
     private final UserMapper mapper;
     private final PasswordEncoder passwordEncoder;
 
-
-    public RegistrationService(UserRepository repository,
-                               UserMapper mapper,
-                               PasswordEncoder passwordEncoder
+    public RegistrationService(
+            UserRepository repository,
+            UserMapper mapper,
+            PasswordEncoder passwordEncoder
     ) {
         this.repository = repository;
         this.mapper = mapper;
         this.passwordEncoder = passwordEncoder;
     }
-
 
     public void addPerson(UserDto dto) {
         User user = mapper.dtoToUser(dto);
